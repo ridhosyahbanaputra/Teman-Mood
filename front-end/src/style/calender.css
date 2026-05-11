@@ -1,0 +1,32 @@
+.kalender-container {
+    flex: 1;
+    width: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.kotak-hari {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 5px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    transition: transform 0.2s;
+}
+
+.tempat-emote {
+    font-size: 22px;
+}
+
+.grid-kalender {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
