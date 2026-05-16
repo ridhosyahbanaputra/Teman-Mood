@@ -304,6 +304,34 @@ body {
   max-width: 1200px;
   margin: 40px auto;
   padding: 0 20px;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mood-display.mood-detail {
+  width: 850px;
+  height: 600px;
+}
+
+.kalender {
+  min-width: 400px;
+  transition: all 0.6s ease;
+}
+
+.mood-display.mood-detail .kalender {
+  /* nanti */
+}
+
+.mood-list {
+  min-width: 450px;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.6s ease;
+}
+
+.mood-display.mood-detail .mood-list {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .info-user {
@@ -432,7 +460,6 @@ body {
   justify-content: center;
   color: #000000;
   font-size: 20px;
-  font-weight: bold;
 }
 
 .saran-AI {

@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <>
-            <h3>About Us ©2026 TemanMod</h3>
+            <h3>About Us &copy;2026 TemanMod</h3>
             <div className="footer-links">
                 <ul>
                     <li>Zuldiman</li>
