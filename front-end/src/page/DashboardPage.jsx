@@ -22,7 +22,7 @@ export default function DasboardPage() {
                         setCurrentDate={setCurrentDate}
                     />
                 </div>
-                <SaranAI />
+                {/* <SaranAI /> */}
             </div>
         </section>
     );

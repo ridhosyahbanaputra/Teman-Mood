@@ -1,19 +1,48 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, } from "react-router-dom";
+import { House, LayoutDashboard, ClipboardList, Info } from "lucide-react";
 
 
-export default function Navigation() {
+export default function Navigation({ isExpanded }) {
     return (
         <nav className="navigation">
             <ul>
                 <li>
-                    <Link to={'/'}>Home</Link>
+                    <NavLink to={'/'} className={({ isActive }) => isActive ? "nav-item active" : 'nav-item'}>
+                        <House size={22} />  {
+                            isExpanded && (
+                                <span>Home</span>
+                            )
+                        }
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to={'/Dashboard'}>Dashboard</Link>
+                    <NavLink to={'/Dashboard'} className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>
+                        <LayoutDashboard size={22} />{
+                            isExpanded && (
+                                <span>Dashboard</span>
+                            )
+                        }
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to={"/kuisoner"}>Isi Kuisoner</Link>
+                    <NavLink to={"/kuisoner"} className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>
+                        <ClipboardList size={22} />{
+                            isExpanded && (
+                                <span>Kuisoner</span>
+                            )
+                        }
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink
+                        to="/about" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>
+                        <Info size={22} />{
+                            isExpanded && (
+                                <span>About Us</span>
+                            )
+                        }
+                    </NavLink>
                 </li>
             </ul>
         </nav>

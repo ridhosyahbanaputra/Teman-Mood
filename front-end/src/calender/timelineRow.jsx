@@ -1,11 +1,6 @@
 import React from "react";
 
-export default function TimelineRow({
-    tanggal,
-    data,
-    selectedDay,
-    setSelectedDay
-}) {
+export default function TimelineRow({ tanggal, data, selectedDay, setSelectedDay }) {
 
     const emote =
         data?.emote || "?";

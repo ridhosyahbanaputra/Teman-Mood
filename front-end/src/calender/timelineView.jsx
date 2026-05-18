@@ -2,17 +2,9 @@ import React from "react";
 import TimelineRow from "./timelineRow";
 import { useEffect } from "react";
 
-export default function TimelineView({
-    currentDate,
-    selectedDay,
-    setSelectedDay,
-    dataMood
-}) {
-
+export default function TimelineView({ currentDate, selectedDay, setSelectedDay, dataMood }) {
     const bulan = currentDate.getMonth();
-
     const tahun = currentDate.getFullYear();
-
     const totalHari = new Date(
         tahun,
         bulan + 1,
@@ -37,13 +29,10 @@ export default function TimelineView({
                 block: "start"
             });
         }
-
     }, [selectedDay]);
 
     return (
-
         <>
-
             <div className="timeline-header">
 
                 <button
@@ -55,41 +44,39 @@ export default function TimelineView({
 
             </div>
 
-            <div className="timeline-container">
+            <div className="timeline-container">{
+                semuaTanggal.map((tanggal) => {
 
-                {
-                    semuaTanggal.map((tanggal) => {
+                    const dataHariIni =
+                        dataMood.find((data) => {
 
-                        const dataHariIni =
-                            dataMood.find((data) => {
+                            const moodDate =
+                                new Date(data.tanggal);
 
-                                const moodDate =
-                                    new Date(data.tanggal);
+                            return (
+                                moodDate.getDate() === tanggal &&
+                                moodDate.getMonth() === bulan &&
+                                moodDate.getFullYear() === tahun
+                            );
+                        });
 
-                                return (
-                                    moodDate.getDate() === tanggal &&
-                                    moodDate.getMonth() === bulan &&
-                                    moodDate.getFullYear() === tahun
-                                );
-                            });
+                    return (
 
-                        return (
+                        <TimelineRow
+                            key={tanggal}
 
-                            <TimelineRow
-                                key={tanggal}
+                            tanggal={tanggal}
 
-                                tanggal={tanggal}
+                            data={dataHariIni}
 
-                                data={dataHariIni}
+                            selectedDay={selectedDay}
 
-                                selectedDay={selectedDay}
+                            setSelectedDay={setSelectedDay}
+                        />
 
-                                setSelectedDay={setSelectedDay}
-                            />
-
-                        );
-                    })
-                }
+                    );
+                })
+            }
 
             </div>
 

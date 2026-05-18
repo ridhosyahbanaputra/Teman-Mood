@@ -9,6 +9,7 @@ import HomePage from "./page/HomePage";
 import Footer from "./component/footer";
 import HomeNavigation from "./component/homeNavigation";
 import KuisonerPage from "./page/kuisonerPage";
+import SideBar from "./component/sideBar";
 
 function App() {
   const [authedUser, setAuthedUser] = useState(null);
@@ -51,22 +52,23 @@ function App() {
             <Route path="*" element={<LoginPage onLoginHandle={onLoginHandle} />} />
           </Routes>
         </main>
-        <footer className="home-footer">
+        {/* <footer className="home-footer">
           <Footer />
-        </footer>
+        </footer> */}
       </div>
     );
   }
   return (
     <div className="app">
-      <header className="header">
-        <h1> TemanMood</h1>
-        <Navigation />
-        <InfoUser
-          name={authedUser.name}
-          onLogOutHandler={onLogOutHandler} />
-      </header>
+      <div className="layout">
+        {/* <h1>TemanMood</h1> */}
+        <SideBar
+          authedUser={authedUser}
+          onLogOutHandler={onLogOutHandler}
+        />
+      </div>
       <main className="home-main">
+        <h1>TemanMood</h1>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/dashboard" element={<DasboardPage />} />
@@ -74,11 +76,6 @@ function App() {
           <Route path="*" element={<HomePage />} />
         </Routes>
       </main>
-      {location.pathname !== "/kuisoner" && (
-        <footer className="home-footer">
-          <Footer />
-        </footer>
-      )}
     </div>
   );
 }
