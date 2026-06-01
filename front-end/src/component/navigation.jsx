@@ -25,7 +25,7 @@ export default function Navigation({ isExpanded }) {
                         }
                     </NavLink>
                 </li>
-                <li>
+                {/* <li>
                     <NavLink to={"/kuisoner"} className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>
                         <ClipboardList size={22} />{
                             isExpanded && (
@@ -33,7 +33,7 @@ export default function Navigation({ isExpanded }) {
                             )
                         }
                     </NavLink>
-                </li>
+                </li> */}
                 <li>
                     <NavLink
                         to="/about" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>
