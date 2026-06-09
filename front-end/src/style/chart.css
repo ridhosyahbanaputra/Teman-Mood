@@ -1,0 +1,32 @@
+.chart-container {
+    /* 1. Minta jatah 50% layar biar sejajar sama kalender */
+    flex: 1;
+    width: 100%;
+
+    /* 2. Samain sama kalender biar estetik (Glassmorphism tipis) */
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    /* Sesuaikan sama kalender tadi */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    /* Biar ada jarak dikit kalau layarnya dipaksa nyempit */
+    min-width: 300px;
+}
+
+.chart-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.chart {
+    width: 100%;
+    /* 3. Patokin tingginya di sini biar Recharts nggak 'ngedrama' lagi */
+    height: 350px;
+}
+
+.chart-data {
+    /* TYPO FIXED: Hapus koma, ganti spasi */
+    margin: 10px 20px -20px 0;
+}
